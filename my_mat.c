@@ -44,22 +44,22 @@ void shortestPathConfig(int mat[N][N])
     }
 }
 
-int isPathed(int mat[N][N],int i, int j)
+void isPathed(int mat[N][N],int i, int j)
 {
     if (mat[i][j])
     {
-        return True;
+        printf("True");
     }
     else
     {
-        return False;
+        printf("False");
     }
 }
 
-int shortestPath(int mat[N][N],int i, int j)
+void shortestPath(int mat[N][N],int i, int j)
 {
     if (mat[i][j] != 0)
-        return mat[i][j];
+        printf("%d", mat[i][j]);
     else
-        return -1;
+        printf("-1");
 }
