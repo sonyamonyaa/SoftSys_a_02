@@ -9,9 +9,8 @@ for(k=0; k<n;k++)
         for(j=0;j<n;j++)
             a[i,j] = min {a[i,j], a[i,k]+a[k+j]}
 */
-int mat[N][N];
 
-int inputMat()
+void inputMat(int mat[N][N])
 {
     for (int i = 0; i < N; i++)
     {
@@ -21,11 +20,10 @@ int inputMat()
                 return 1;
         }
     }
-    shortestPathConfig();
-    return 0;
+    shortestPathConfig(mat);
 }
 
-int shortestPathConfig()
+void shortestPathConfig(int mat[N][N])
 {
     for (int k = 0; k < N; k++)
     {
@@ -33,20 +31,22 @@ int shortestPathConfig()
         {
             for (int j = 0; j < N; j++)
             {
-                if(mat[i][j] !=0)
-                //have to consider that no path is indicated by 0
-                    mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);
-                else
-                    mat[i][j] = mat[i][k] + mat[k][j];
+                if (i == j) 
+                {
+                    //have to consider that no path is indicated by 0
+                    if (mat[i][j] != 0)
+                        mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);
+                    else
+                        mat[i][j] = mat[i][k] + mat[k][j];
+                }
             }
         }
     }
-    return 0;
 }
 
-int isPathed(int i, int j)
+int isPathed(int mat[N][N],int i, int j)
 {
-    if (mat[i][j] > 0)
+    if (mat[i][j])
     {
         return True;
     }
@@ -56,9 +56,9 @@ int isPathed(int i, int j)
     }
 }
 
-int shortestPath(int i, int j)
+int shortestPath(int mat[N][N],int i, int j)
 {
-    if(is_pathed(i,j))
+    if (mat[i][j] != 0)
         return mat[i][j];
     else
         return -1;
