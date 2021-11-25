@@ -1,3 +1,5 @@
+#ifndef _MY_MAT_H_
+    #define _MY_MAT_H_
 #define N 10
 
 /**
@@ -15,3 +17,4 @@ void isPathed(int mat[N][N],int i, int j);
  * if none exists - returns -1
  * */
 void shortestPath(int mat[N][N],int i, int j);
+#endif

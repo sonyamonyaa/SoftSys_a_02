@@ -25,7 +25,7 @@ void main(){
                   ch = 'A';
                   break;
               }
-              isPathed(mat[N][N],int i, int j);
+              isPathed(mat[N][N],i, j);
 
             case 'C':
               int i, j;
@@ -40,7 +40,7 @@ void main(){
                   ch = 'A';
                   break;
               }
-              shortestPath(mat[N][N],int i, int j);
+              shortestPath(mat[N][N],i, j);
 
             case 'D':
               break;

@@ -6,10 +6,10 @@ OBJ= main.o my_mat.o
 all: libclass mains maind
 
 mains: main.o
-	$(CC) $(FLAGS) -o mains $(OBJ_MAIN) libclass.a -lm
+	$(CC) $(FLAGS) -o mains main.o libclass.a -lm
 
 maind: main.o
-	$(CC) $(FLAGS) -o maind $(OBJ_MAIN) ./libclass.so -lm
+	$(CC) $(FLAGS) -o maind main.o ./libclass.so -lm
 	
 libclass: libclass.a libclass.so
 
