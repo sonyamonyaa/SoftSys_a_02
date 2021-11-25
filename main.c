@@ -4,6 +4,7 @@
 int mat[N][N];
 
 void main(){
+    int i, j;
     char ch = 'A';
     while(ch != 'D'){
         scanf("%c", &ch);
@@ -11,9 +12,9 @@ void main(){
         switch(ch){
             case 'A':
               inputMat(mat);
+              break;
 
             case 'B':
-              int i, j;
               scanf("%d%d", &i, &j);
               if(i < 0 || i >= N){
                   printf("their is no vertes %d", i);
@@ -25,10 +26,9 @@ void main(){
                   ch = 'A';
                   break;
               }
-              isPathed(mat[N][N],i, j);
+              isPathed(mat, i, j);
 
             case 'C':
-              int i, j;
               scanf("%d%d", &i, &j);
               if(i < 0 || i >= N){
                   printf("their is no vertes %d", i);
@@ -40,7 +40,7 @@ void main(){
                   ch = 'A';
                   break;
               }
-              shortestPath(mat[N][N],i, j);
+              shortestPath(mat, i, j);
 
             case 'D':
               break;
