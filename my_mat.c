@@ -21,6 +21,7 @@ int inputMat()
                 return 1;
         }
     }
+    shortestPathConfig();
     return 0;
 }
 
@@ -32,8 +33,11 @@ int shortestPathConfig()
         {
             for (int j = 0; j < N; j++)
             {
+                if(mat[i][j] !=0)
                 //have to consider that no path is indicated by 0
-                mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);
+                    mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);
+                else
+                    mat[i][j] = mat[i][k] + mat[k][j];
             }
         }
     }
@@ -42,7 +46,6 @@ int shortestPathConfig()
 
 int isPathed(int i, int j)
 {
-    shortestPathConfig();
     if (mat[i][j] > 0)
     {
         return True;
