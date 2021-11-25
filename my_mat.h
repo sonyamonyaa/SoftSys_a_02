@@ -6,10 +6,6 @@
  * gets a matrice input 
  **/
 void inputMat(int mat[N][N]);
-/**
- * configures the matrice's shortest path between vertexes
- **/
-void shortestPathConfig(int mat[N][N]);
 
 /**
  * returns whether there's path between vertex i to vertex j
