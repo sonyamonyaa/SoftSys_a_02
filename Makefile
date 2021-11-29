@@ -3,18 +3,10 @@ AR=ar
 FLAGS= -Wall -g
 OBJ= main.o my_mat.o
 
-all: libclass mains maind
+all: connections
 
-mains: main.o
-	$(CC) $(FLAGS) -o mains main.o libclass.a -lm
-
-maind: main.o
-	$(CC) $(FLAGS) -o maind main.o ./libclass.so -lm
-	
-libclass: libclass.a libclass.so
-
-libclass.so: $(OBJ)
-	$(CC) -shared -o libclass.so $(OBJ)
+connections: main.o libclass.a
+	$(CC) $(FLAGS) -o connections main.o libclass.a -lm
 
 libclass.a: $(OBJ)
 	$(AR) -rcs libclass.a $(OBJ)
@@ -28,4 +20,4 @@ my_mat.o: my_mat.c my_mat.h
 .PHONY: clean all
 
 clean:
-	rm -f *.o *.a *.so mains maind
+	rm -f *.o *.a *.so connections

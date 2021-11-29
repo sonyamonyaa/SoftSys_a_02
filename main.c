@@ -1,9 +1,9 @@
-#include <my_mat.h>
+#include "my_mat.h"
 #include <stdio.h>
 
 int mat[N][N];
 
-void main(){
+int main(){
     int i, j;
     char ch = 'A';
     while(ch != 'D'){
@@ -49,4 +49,5 @@ void main(){
               printf("you didnt enter a legal command! plausible options: A, B, C or D");
         }
     }
+    return 0;
 }
