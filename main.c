@@ -17,30 +17,32 @@ int main(){
             case 'B':
               scanf("%d%d", &i, &j);
               if(i < 0 || i >= N){
-                  printf("their is no vertes %d", i);
+                  printf("there is no vertices %d", i);
                   ch = 'A';
                   break;
               }
               if(j < 0 || j >= N){
-                  printf("their is no vertes %d", j);
+                  printf("there is no vertices %d", j);
                   ch = 'A';
                   break;
               }
               isPathed(mat, i, j);
+              printf("\n");
 
             case 'C':
               scanf("%d%d", &i, &j);
               if(i < 0 || i >= N){
-                  printf("their is no vertes %d", i);
+                  printf("there is no vertices %d", i);
                   ch = 'A';
                   break;
               }
               if(j < 0 || j >= N){
-                  printf("their is no vertes %d", j);
+                  printf("there is no vertices %d", j);
                   ch = 'A';
                   break;
               }
               shortestPath(mat, i, j);
+              printf("\n");
 
             case 'D':
               break;
