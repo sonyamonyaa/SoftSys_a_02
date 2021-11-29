@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 
+#define MAX 9999
 void shortestPathConfig(int mat[N][N])
 {
     for (int k = 0; k < N; k++)
@@ -10,7 +11,7 @@ void shortestPathConfig(int mat[N][N])
         {
             for (int j = 0; j < N; j++)
             {
-                if (i == j) 
+                if (i != j) 
                 {
                     //have to consider that no path is indicated by 0
                     if (mat[i][j] != 0)
@@ -29,8 +30,10 @@ void inputMat(int mat[N][N])
     {
         for (int j = 0; j < N; j++)
         {
-            if (scanf("%d", &mat[i][j]) < 1)
-                break;
+            scanf("%d", &mat[i][j]);
+            if(mat[i][j] == 0 && i!=j) {
+                mat[i][j] = MAX;
+            }
         }
     }
     shortestPathConfig(mat);
@@ -40,7 +43,7 @@ void inputMat(int mat[N][N])
 
 void isPathed(int mat[N][N],int i, int j)
 {
-    if (mat[i][j])
+    if (mat[i][j] != MAX && mat[i][j] != 0)
     {
         printf("True");
     }
@@ -52,8 +55,9 @@ void isPathed(int mat[N][N],int i, int j)
 
 void shortestPath(int mat[N][N],int i, int j)
 {
-    if (mat[i][j] != 0)
+    if (mat[i][j] != MAX && mat[i][j] != 0)
         printf("%d", mat[i][j]);
     else
         printf("-1");
 }
+
