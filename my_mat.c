@@ -13,11 +13,7 @@ void shortestPathConfig(int mat[N][N])
             {
                 if (i != j) 
                 {
-                    //have to consider that no path is indicated by 0
-                    if (mat[i][j] != 0)
-                        mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);
-                    else
-                        mat[i][j] = mat[i][k] + mat[k][j];
+                    mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);
                 }
             }
         }
