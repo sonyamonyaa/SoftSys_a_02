@@ -15,7 +15,6 @@ int main()
     {
     case 'A':
       inputMat(mat);
-      printMat(mat);
       break;
 
     case 'B':
